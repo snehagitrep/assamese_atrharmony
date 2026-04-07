@@ -1,417 +1,59 @@
+cat > index.html <<'EOF'
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audio Analysis Workspace</title>
+  <title>Assamese ATR Harmony — Data Companion</title>
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #0f172a;
-      --card: #111827;
-      --card-light: #f8fafc;
-      --text: #e2e8f0;
-      --text-light: #0f172a;
-      --accent: #6366f1;
-      --accent-2: #14b8a6;
-      --border: #334155;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: linear-gradient(160deg, #020617, #0f172a 50%, #1e293b);
-      color: var(--text);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 2rem;
-    }
-
-    .app {
-      width: min(1100px, 100%);
-      background: color-mix(in oklab, var(--card) 88%, black);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-      overflow: hidden;
-    }
-
-    header {
-      padding: 1.2rem 1.4rem;
-      border-bottom: 1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 90%, #020617);
-    }
-
-    h1 {
-      margin: 0 0 0.4rem;
-      font-size: 1.35rem;
-      letter-spacing: 0.02em;
-    }
-
-    header p {
-      margin: 0;
-      opacity: 0.85;
-      font-size: 0.95rem;
-    }
-
-    .controls {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      padding: 1.2rem 1.4rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .control-card {
-      border: 1px solid var(--border);
-      border-radius: 0.8rem;
-      padding: 0.9rem;
-      background: color-mix(in oklab, var(--card) 92%, #1f2937);
-    }
-
-    .control-card h2 {
-      font-size: 1rem;
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-    }
-
-    input[type="file"] {
-      width: 100%;
-      font-size: 0.9rem;
-    }
-
-    button {
-      margin-top: 0.7rem;
-      border: none;
-      border-radius: 0.55rem;
-      background: linear-gradient(45deg, var(--accent), var(--accent-2));
-      color: white;
-      font-weight: 600;
-      padding: 0.55rem 0.9rem;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .viz-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      padding: 1.2rem 1.4rem 1.4rem;
-    }
-
-    .panel {
-      border: 1px solid var(--border);
-      border-radius: 0.8rem;
-      padding: 0.9rem;
-      background: color-mix(in oklab, var(--card) 94%, #111827);
-    }
-
-    .panel h3 {
-      margin: 0 0 0.6rem;
-      font-size: 0.95rem;
-    }
-
-    canvas,
-    img {
-      width: 100%;
-      border-radius: 0.45rem;
-      border: 1px solid color-mix(in oklab, var(--border), black 30%);
-      background: #020617;
-    }
-
-    #spectrogramCanvas, #formantCanvas {
-      height: 250px;
-    }
-
-    #status {
-      margin-top: 0.5rem;
-      font-size: 0.88rem;
-      opacity: 0.9;
-      min-height: 1.2rem;
-    }
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f8fafc; color: #0f172a; }
+    .card { background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px; margin-bottom: 14px; }
+    img { width: 100%; max-width: 900px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    audio { width: 100%; max-width: 900px; }
   </style>
 </head>
 <body>
-  <main class="app">
-    <header>
-      <h1>Audio Upload + Spectrogram + Formant Trajectory Viewer</h1>
-      <p>Upload an audio file, run analysis, and optionally load your own spectrogram/formant images.</p>
-    </header>
+  <h1>Assamese ATR Harmony: Acoustic Data Companion</h1>
+  <p><strong>Paper title:</strong> Replace with your real paper title</p>
+  <p><strong>Authors:</strong> Replace with author names</p>
+  <p><strong>Citation / preprint link:</strong> Replace with DOI/PDF link</p>
 
-    <section class="controls">
-      <div class="control-card">
-        <h2>1) Upload audio</h2>
-        <input id="audioInput" type="file" accept="audio/*" />
-        <audio id="audioPlayer" controls style="width:100%;margin-top:0.6rem;"></audio>
-        <button id="analyzeBtn" disabled>Analyze Audio</button>
-        <div id="status"></div>
-      </div>
+  <h2>All [+ATR]</h2>
+  <div class="card">
+    <h3>podobi</h3>
+    <img src="assets/waveforms/podobi_waveform.png" alt="podobi waveform">
+    <img src="assets/spectrograms/podobi_spectrogram.png" alt="podobi spectrogram">
+    <img src="assets/trajectories/podobi_f1.png" alt="podobi f1">
+    <audio controls src="assets/audio/podobi.wav"></audio>
+  </div>
 
-      <div class="control-card">
-        <h2>2) Upload spectrogram image (optional)</h2>
-        <input id="spectrogramImageInput" type="file" accept="image/*" />
-      </div>
+  <h2>All [-ATR]</h2>
+  <div class="card">
+    <h3>dekhile</h3>
+    <img src="assets/waveforms/dekhile_waveform.png" alt="dekhile waveform">
+    <img src="assets/spectrograms/dekhile_spectrogram.png" alt="dekhile spectrogram">
+    <img src="assets/trajectories/dekhile_f1.png" alt="dekhile f1">
+    <audio controls src="assets/audio/dekhile.wav"></audio>
+  </div>
 
-      <div class="control-card">
-        <h2>3) Upload formant trajectory image (optional)</h2>
-        <input id="formantImageInput" type="file" accept="image/*" />
-      </div>
-    </section>
+  <h2>Mixed ATR</h2>
+  <div class="card">
+    <h3>Example mixed token</h3>
+    <img src="assets/waveforms/example_waveform.png" alt="mixed waveform">
+    <img src="assets/spectrograms/example_spectrogram.png" alt="mixed spectrogram">
+    <img src="assets/trajectories/example_f1.png" alt="mixed f1">
+    <audio controls src="assets/audio/example.wav"></audio>
+  </div>
 
-    <section class="viz-grid">
-      <div class="panel">
-        <h3>Generated Spectrogram (from uploaded audio)</h3>
-        <canvas id="spectrogramCanvas" width="1000" height="250"></canvas>
-      </div>
+  <h2>Direct comparison</h2>
+  <div class="card">
+    Fill with your pairwise [+ATR] vs [-ATR] observations.
+  </div>
 
-      <div class="panel">
-        <h3>Estimated Formant Trajectories (F1/F2/F3 from spectral peaks)</h3>
-        <canvas id="formantCanvas" width="1000" height="250"></canvas>
-      </div>
-
-      <div class="panel">
-        <h3>Uploaded Spectrogram Image Preview</h3>
-        <img id="spectrogramImagePreview" alt="Uploaded spectrogram preview" hidden />
-      </div>
-
-      <div class="panel">
-        <h3>Uploaded Formant Trajectory Image Preview</h3>
-        <img id="formantImagePreview" alt="Uploaded formant trajectory preview" hidden />
-      </div>
-    </section>
-  </main>
-
-  <script>
-    const audioInput = document.getElementById('audioInput');
-    const audioPlayer = document.getElementById('audioPlayer');
-    const analyzeBtn = document.getElementById('analyzeBtn');
-    const statusEl = document.getElementById('status');
-
-    const spectrogramCanvas = document.getElementById('spectrogramCanvas');
-    const spectrogramCtx = spectrogramCanvas.getContext('2d');
-
-    const formantCanvas = document.getElementById('formantCanvas');
-    const formantCtx = formantCanvas.getContext('2d');
-
-    const spectrogramImageInput = document.getElementById('spectrogramImageInput');
-    const formantImageInput = document.getElementById('formantImageInput');
-    const spectrogramImagePreview = document.getElementById('spectrogramImagePreview');
-    const formantImagePreview = document.getElementById('formantImagePreview');
-
-    let selectedAudioFile = null;
-
-    audioInput.addEventListener('change', (event) => {
-      const [file] = event.target.files;
-      if (!file) return;
-
-      selectedAudioFile = file;
-      audioPlayer.src = URL.createObjectURL(file);
-      analyzeBtn.disabled = false;
-      statusEl.textContent = `Ready: ${file.name}`;
-    });
-
-    function setupImagePreview(inputEl, previewEl) {
-      inputEl.addEventListener('change', (event) => {
-        const [file] = event.target.files;
-        if (!file) return;
-
-        previewEl.src = URL.createObjectURL(file);
-        previewEl.hidden = false;
-      });
-    }
-
-    setupImagePreview(spectrogramImageInput, spectrogramImagePreview);
-    setupImagePreview(formantImageInput, formantImagePreview);
-
-    function hslToRgb(h, s, l) {
-      s /= 100;
-      l /= 100;
-      const c = (1 - Math.abs(2 * l - 1)) * s;
-      const x = c * (1 - Math.abs((h / 60) % 2 - 1));
-      const m = l - c / 2;
-      let [r, g, b] = [0, 0, 0];
-      if (h < 60) [r, g, b] = [c, x, 0];
-      else if (h < 120) [r, g, b] = [x, c, 0];
-      else if (h < 180) [r, g, b] = [0, c, x];
-      else if (h < 240) [r, g, b] = [0, x, c];
-      else if (h < 300) [r, g, b] = [x, 0, c];
-      else [r, g, b] = [c, 0, x];
-
-      return {
-        r: Math.round((r + m) * 255),
-        g: Math.round((g + m) * 255),
-        b: Math.round((b + m) * 255)
-      };
-    }
-
-    async function decodeAudio(file) {
-      const arrayBuffer = await file.arrayBuffer();
-      const context = new (window.AudioContext || window.webkitAudioContext)();
-      const audioBuffer = await context.decodeAudioData(arrayBuffer.slice(0));
-      await context.close();
-      return audioBuffer;
-    }
-
-    function estimatePeaks(spectrum, sampleRate, fftSize, count = 3) {
-      const half = spectrum.length;
-      const binWidth = sampleRate / fftSize;
-      const peaks = [];
-
-      for (let i = 2; i < half - 2; i++) {
-        const value = spectrum[i];
-        if (value > spectrum[i - 1] && value > spectrum[i + 1]) {
-          const freq = i * binWidth;
-          if (freq >= 100 && freq <= 4000) {
-            peaks.push({ freq, amp: value });
-          }
-        }
-      }
-
-      peaks.sort((a, b) => b.amp - a.amp);
-      return peaks.slice(0, count).map((p) => p.freq).sort((a, b) => a - b);
-    }
-
-    function drawFormants(formantsByFrame, durationSec) {
-      const width = formantCanvas.width;
-      const height = formantCanvas.height;
-      formantCtx.clearRect(0, 0, width, height);
-      formantCtx.fillStyle = '#020617';
-      formantCtx.fillRect(0, 0, width, height);
-
-      const maxFreq = 4000;
-      const colors = ['#22d3ee', '#f59e0b', '#ef4444'];
-      const labels = ['F1', 'F2', 'F3'];
-
-      formantCtx.strokeStyle = 'rgba(255,255,255,0.15)';
-      formantCtx.lineWidth = 1;
-      for (let f = 500; f <= 4000; f += 500) {
-        const y = height - (f / maxFreq) * height;
-        formantCtx.beginPath();
-        formantCtx.moveTo(0, y);
-        formantCtx.lineTo(width, y);
-        formantCtx.stroke();
-      }
-
-      formantCtx.fillStyle = 'rgba(255,255,255,0.75)';
-      formantCtx.font = '12px sans-serif';
-      formantCtx.fillText(`0s`, 5, height - 8);
-      formantCtx.fillText(`${durationSec.toFixed(2)}s`, width - 65, height - 8);
-
-      for (let idx = 0; idx < 3; idx++) {
-        formantCtx.strokeStyle = colors[idx];
-        formantCtx.lineWidth = 2;
-        formantCtx.beginPath();
-        formantsByFrame.forEach((triple, i) => {
-          const x = (i / Math.max(1, formantsByFrame.length - 1)) * width;
-          const freq = triple[idx] || 0;
-          const y = height - (Math.min(freq, maxFreq) / maxFreq) * height;
-          if (i === 0) formantCtx.moveTo(x, y);
-          else formantCtx.lineTo(x, y);
-        });
-        formantCtx.stroke();
-
-        formantCtx.fillStyle = colors[idx];
-        formantCtx.fillText(labels[idx], 8 + idx * 30, 15);
-      }
-    }
-
-    function drawSpectrogram(frames) {
-      const width = spectrogramCanvas.width;
-      const height = spectrogramCanvas.height;
-      const imageData = spectrogramCtx.createImageData(width, height);
-
-      for (let x = 0; x < width; x++) {
-        const frameIndex = Math.floor((x / width) * (frames.length - 1));
-        const frame = frames[frameIndex] || [];
-
-        for (let y = 0; y < height; y++) {
-          const normalized = 1 - y / height;
-          const binIndex = Math.floor(normalized * (frame.length - 1));
-          const mag = frame[binIndex] || 0;
-          const db = 20 * Math.log10(mag + 1e-6);
-          const norm = Math.max(0, Math.min(1, (db + 90) / 90));
-          const hue = 260 - norm * 260;
-          const { r, g, b } = hslToRgb(hue, 85, 20 + norm * 50);
-
-          const i = (y * width + x) * 4;
-          imageData.data[i] = r;
-          imageData.data[i + 1] = g;
-          imageData.data[i + 2] = b;
-          imageData.data[i + 3] = 255;
-        }
-      }
-
-      spectrogramCtx.putImageData(imageData, 0, 0);
-    }
-
-    function stft(channelData, fftSize = 1024, hop = 256) {
-      const frames = [];
-      for (let start = 0; start + fftSize < channelData.length; start += hop) {
-        const frame = channelData.slice(start, start + fftSize);
-        const windowed = frame.map((v, i) => v * (0.5 - 0.5 * Math.cos((2 * Math.PI * i) / (fftSize - 1))));
-        const mags = simpleMagnitudeSpectrum(windowed);
-        frames.push(mags);
-      }
-      return frames;
-    }
-
-    // Naive DFT magnitude (simple for demo; not optimized for huge files)
-    function simpleMagnitudeSpectrum(signal) {
-      const N = signal.length;
-      const half = Math.floor(N / 2);
-      const mags = new Float32Array(half);
-
-      for (let k = 0; k < half; k++) {
-        let re = 0;
-        let im = 0;
-        for (let n = 0; n < N; n++) {
-          const angle = (2 * Math.PI * k * n) / N;
-          re += signal[n] * Math.cos(angle);
-          im -= signal[n] * Math.sin(angle);
-        }
-        mags[k] = Math.sqrt(re * re + im * im);
-      }
-      return mags;
-    }
-
-    analyzeBtn.addEventListener('click', async () => {
-      if (!selectedAudioFile) return;
-
-      analyzeBtn.disabled = true;
-      statusEl.textContent = 'Decoding audio and generating analysis...';
-
-      try {
-        const audioBuffer = await decodeAudio(selectedAudioFile);
-        const channelData = audioBuffer.getChannelData(0);
-        const sampleRate = audioBuffer.sampleRate;
-        const fftSize = 512;
-        const hop = 128;
-
-        const downsampleStep = Math.max(1, Math.floor(channelData.length / (sampleRate * 8)));
-        const reduced = new Float32Array(Math.floor(channelData.length / downsampleStep));
-        for (let i = 0, j = 0; i < channelData.length; i += downsampleStep, j++) {
-          reduced[j] = channelData[i];
-        }
-
-        const frames = stft(reduced, fftSize, hop);
-        drawSpectrogram(frames);
-
-        const formantsByFrame = frames.map((frame) => estimatePeaks(frame, sampleRate / downsampleStep, fftSize, 3));
-        drawFormants(formantsByFrame, audioBuffer.duration);
-
-        statusEl.textContent = 'Analysis complete. Spectrogram and formant trajectories updated.';
-      } catch (error) {
-        console.error(error);
-        statusEl.textContent = 'Could not analyze this file. Try another audio format (WAV/MP3).';
-      } finally {
-        analyzeBtn.disabled = false;
-      }
-    });
-  </script>
+  <h2>Full figure from paper</h2>
+  <div class="card">
+    <img src="assets/combined_figures/figure1_composite.png" alt="full paper figure">
+  </div>
 </body>
 </html>
+EOF
