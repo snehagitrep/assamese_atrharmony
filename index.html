@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assamese ATR Harmony — Data Companion</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --accent: #4f46e5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(1100px, 94%);
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    header {
+      background: linear-gradient(120deg, #eef2ff, #f5f3ff);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.2rem 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { margin: 0.2rem 0; }
+    h1 { font-size: 1.55rem; }
+    h2 { font-size: 1.2rem; margin-top: 1.1rem; }
+    h3 { font-size: 1rem; }
+
+    .meta {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.8rem;
+      background: #fbfdff;
+    }
+
+    .token-meta {
+      margin: 0.35rem 0 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    figure {
+      margin: 0.55rem 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.4rem;
+      background: #fff;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      background: #edf2f7;
+    }
+
+    figcaption {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 0.35rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #e0e7ff;
+      color: #312e81;
+      padding: 0.2rem 0.45rem;
+      border-radius: 999px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .compare {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-top: 0.6rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 720px;
+      font-size: 0.92rem;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef2ff;
+    }
+
+    footer {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Assamese ATR Harmony: Acoustic Data Companion</h1>
+      <p class="meta"><strong>Paper title:</strong> Replace with your real paper title</p>
+      <p class="meta"><strong>Authors:</strong> Replace with author names</p>
+      <p class="meta"><strong>Citation / preprint link:</strong> <a href="#">Replace with DOI/PDF link</a></p>
+      <p class="meta">This page hosts waveform, spectrogram, F1 trajectory, and audio examples for ATR harmony data.</p>
+    </header>
+
+    <section class="section" id="plus-atr">
+      <h2>All [+ATR] examples <span class="badge">Section A</span></h2>
+      <div class="cards">
+        <article class="card">
+          <h3>podobi</h3>
+          <p class="token-meta">Phonetic form: /podobi/ · Speaker: S1 · ATR type: [+ATR] · Figure ref: A1</p>
+          <figure>
+            <img src="assets/waveforms/podobi_waveform.png" alt="Waveform for podobi" />
+            <figcaption>Waveform</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/spectrograms/podobi_spectrogram.png" alt="Spectrogram for podobi" />
+            <figcaption>Spectrogram</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/trajectories/podobi_f1.png" alt="F1 trajectory for podobi" />
+            <figcaption>F1 trajectory</figcaption>
+          </figure>
+          <audio controls src="assets/audio/podobi.wav"></audio>
+          <p class="note">Replace this with a 2–3 line interpretation for this [+ATR] token.</p>
+        </article>
+
+        <article class="card">
+          <h3>palene</h3>
+          <p class="token-meta">Phonetic form: /palene/ · Speaker: S1 · ATR type: [+ATR] · Figure ref: A2</p>
+          <figure><img src="assets/waveforms/palene_waveform.png" alt="Waveform for palene" /><figcaption>Waveform</figcaption></figure>
+          <figure><img src="assets/spectrograms/palene_spectrogram.png" alt="Spectrogram for palene" /><figcaption>Spectrogram</figcaption></figure>
+          <figure><img src="assets/trajectories/palene_f1.png" alt="F1 trajectory for palene" /><figcaption>F1 trajectory</figcaption></figure>
+          <audio controls src="assets/audio/palene.wav"></audio>
+          <p class="note">Replace this with your notes for this [+ATR] item.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="minus-atr">
+      <h2>All [-ATR] examples <span class="badge">Section B</span></h2>
+      <div class="cards">
+        <article class="card">
+          <h3>dekhile</h3>
+          <p class="token-meta">Phonetic form: /dekhile/ · Speaker: S2 · ATR type: [-ATR] · Figure ref: B1</p>
+          <figure><img src="assets/waveforms/dekhile_waveform.png" alt="Waveform for dekhile" /><figcaption>Waveform</figcaption></figure>
+          <figure><img src="assets/spectrograms/dekhile_spectrogram.png" alt="Spectrogram for dekhile" /><figcaption>Spectrogram</figcaption></figure>
+          <figure><img src="assets/trajectories/dekhile_f1.png" alt="F1 trajectory for dekhile" /><figcaption>F1 trajectory</figcaption></figure>
+          <audio controls src="assets/audio/dekhile.wav"></audio>
+          <p class="note">Replace this with your notes for this [-ATR] item.</p>
+        </article>
+
+        <article class="card">
+          <h3>dhiemali</h3>
+          <p class="token-meta">Phonetic form: /dhiemali/ · Speaker: S2 · ATR type: [-ATR] · Figure ref: B2</p>
+          <figure><img src="assets/waveforms/dhiemali_waveform.png" alt="Waveform for dhiemali" /><figcaption>Waveform</figcaption></figure>
+          <figure><img src="assets/spectrograms/dhiemali_spectrogram.png" alt="Spectrogram for dhiemali" /><figcaption>Spectrogram</figcaption></figure>
+          <figure><img src="assets/trajectories/dhiemali_f1.png" alt="F1 trajectory for dhiemali" /><figcaption>F1 trajectory</figcaption></figure>
+          <audio controls src="assets/audio/dhiemali.wav"></audio>
+          <p class="note">Replace this with your notes for this [-ATR] item.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="mixed-atr">
+      <h2>Mixed ATR patterns <span class="badge">Section C</span></h2>
+      <p class="meta">Use this section for forms where suffix/adjacent vowels show non-uniform ATR behavior. Add or duplicate cards as needed.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Example mixed token</h3>
+          <p class="token-meta">Phonetic form: /.../ · Speaker: S3 · ATR type: Mixed · Figure ref: C1</p>
+          <figure><img src="assets/waveforms/example_waveform.png" alt="Waveform for mixed token" /><figcaption>Waveform</figcaption></figure>
+          <figure><img src="assets/spectrograms/example_spectrogram.png" alt="Spectrogram for mixed token" /><figcaption>Spectrogram</figcaption></figure>
+          <figure><img src="assets/trajectories/example_f1.png" alt="F1 trajectory for mixed token" /><figcaption>F1 trajectory</figcaption></figure>
+          <audio controls src="assets/audio/example.wav"></audio>
+          <p class="note">Replace this with your analysis note for the mixed pattern.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="direct-comparison">
+      <h2>Direct comparison table <span class="badge">Section D</span></h2>
+      <p class="meta">Summarize key values or qualitative observations from matched [+ATR] vs [-ATR] items.</p>
+      <div class="compare">
+        <table>
+          <thead>
+            <tr>
+              <th>Pair</th>
+              <th>[+ATR] token</th>
+              <th>[-ATR] token</th>
+              <th>F1 trend</th>
+              <th>Spectrogram observation</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pair 1</td>
+              <td>podobi</td>
+              <td>dekhile</td>
+              <td>Replace with trend summary</td>
+              <td>Replace with your observation</td>
+              <td>Replace with interpretation</td>
+            </tr>
+            <tr>
+              <td>Pair 2</td>
+              <td>palene</td>
+              <td>dhiemali</td>
+              <td>Replace with trend summary</td>
+              <td>Replace with your observation</td>
+              <td>Replace with interpretation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="full-figure">
+      <h2>Full figure from paper <span class="badge">Section E</span></h2>
+      <figure>
+        <img src="assets/combined_figures/figure1_composite.png" alt="Composite figure from the paper" />
+        <figcaption>Replace caption with the exact figure caption used in the paper.</figcaption>
+      </figure>
+    </section>
+
+    <footer>
+      Tip: File paths are case-sensitive on GitHub Pages. Keep names exactly identical to `src` values in this HTML.
+    </footer>
+  </main>
+</body>
+</html>
