@@ -1,27 +1,45 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/README.md b/README.md
-index 79e41b2b5ced840d89d5e5d43f4cf58cfba425e6..41585b6f3941983615bf9a2434033a8654b07ece 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,16 @@
--# assamese_atrharmony
-\ No newline at end of file
-+# assamese_atrharmony
-+
-+Simple browser-based demo page for:
-+
-+- Uploading and playing an audio file
-+- Generating a spectrogram visualization from the audio
-+- Estimating basic formant trajectories (F1/F2/F3) from spectral peaks
-+- Uploading external spectrogram and formant-trajectory images for side-by-side viewing
-+
-+## Run locally
-+
-+```bash
-+python3 -m http.server 8000
-+```
-+
-+Then open <http://localhost:8000> in your browser.
- 
-EOF
-)
+# assamese_atrharmony
+
+Template website for presenting Assamese ATR harmony examples from your paper.
+
+## Repository structure
+
+```text
+.
+├── index.html
+└── assets
+    ├── audio
+    ├── waveforms
+    ├── spectrograms
+    ├── trajectories
+    └── combined_figures
+```
+
+## Quick start (local preview)
+
+1. Add your files under the `assets/` subfolders using the exact filenames referenced in `index.html`.
+2. Run:
+
+```bash
+python3 -m http.server 8000
+```
+
+3. Open <http://localhost:8000>.
+
+If you see a directory listing, confirm `index.html` exists in the folder where you started the server.
+
+## GitHub Pages deployment
+
+1. Push this repository to GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, choose:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main`
+   - **Folder:** `/ (root)`
+4. Save and wait 1–2 minutes.
+
+Your site URL will look like:
+
+```text
+https://<username>.github.io/<repo-name>/
+```
